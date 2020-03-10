@@ -1,15 +1,20 @@
 from random import random
 
-argent = 100
+argent = 1000
 
 # si je gagne je double ma mise si je perd ba je perd
 
 while argent > 0:
-    print("----------------------------------------------")
-    print(" vous avez ",argent,"pour arreter écrivez STOP")
+    texte_argent = "║Solde : " + str(argent) + "€ ║"
+    barre = ""
+    for i in range(0, len(texte_argent)-2):
+        barre += "═"
+    print("╔"+barre+"╗")
+    print(texte_argent)
+    print("╚"+barre+"╝")
     
     try:
-        mise = int(input("combien misez vous ? : \n"))
+        mise = int(input("Combien misez vous ? : \n"))
 
         if mise > argent:
             print("vous n'avez pas assez d'argent")
