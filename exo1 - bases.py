@@ -182,6 +182,20 @@ for prenom in prenoms:
 
 print(prenoms)
 
+# Autre exemple de liste
+ma_liste = ["Bonjour", "Salut", "Hello"]
+# Boucle pour chaque mot de la liste
+for mot in ma_liste:
+    print(mot)
+# Boucle avec un entier qui va de 0 au nombre d'éléments de la liste
+for i in range(0, len(ma_liste)):
+    if i == 0:
+        print(ma_liste[i], "est le premier")
+    elif i == len(ma_liste)-1:
+        print(ma_liste[i], "est le dernier")
+    else:
+        print(ma_liste[i])
+
 # Fonction len()
 print(len("salut"))
 print(len(["Enzo", "Eric", "Matthias"]))
@@ -203,9 +217,15 @@ print(carte[1][0])
 
 # Dictionnaires
 mon_dico = {"Formateur" : "Enzo",
-            "Élève" : "Éric"}
-print(mon_dico['Formateur'])
-print(mon_dico['Élève'])
+            "Élèves" : ["Éric", "Paul"]}
+#print(mon_dico['Formateur'])
+#print(mon_dico['Élèves'])
 
 for cle in mon_dico:
-    print(mon_dico[cle])
+    print(cle)
+    if type(mon_dico[cle]) == type([]):
+        for element in mon_dico[cle]:
+            print(element)
+    else:
+        print(mon_dico[cle])
+
